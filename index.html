@@ -197,6 +197,8 @@ section{padding:28px 0 8px;scroll-margin-top:calc(var(--nav-h) + 12px)}
 .stay-card .art{width:76px;height:76px;border:var(--line);border-radius:18px;background:var(--yellow-l);overflow:hidden}
 .kv{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;font-size:14.5px;margin-top:6px}
 .kv dt{opacity:.7}
+.maplink{display:inline-flex;align-items:center;gap:4px;margin-top:6px;font-size:13px;padding:2px 12px;border:2px solid var(--ink);border-radius:999px;background:var(--water);color:var(--ink);text-decoration:none}
+.maplink:active{transform:scale(.96)}
 .pending{display:inline-block;font-size:12.5px;padding:0 8px;border:2px dashed var(--ink);border-radius:999px;background:var(--paper)}
 
 footer{text-align:center;padding:36px 0 48px;font-size:13px}
@@ -768,7 +770,7 @@ $("#stayList").innerHTML = TRIP.stays.map(s=>`
     <dl class="kv">
       <dt>入住</dt><dd>${val(s.checkin)}</dd>
       <dt>退房</dt><dd>${val(s.checkout)}</dd>
-      <dt>地址</dt><dd>${val(s.address)}</dd>
+      <dt>地址</dt><dd>${val(s.address)}${/待更新/.test(s.address)?"":`<br><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(s.name+", "+s.address)}" target="_blank" rel="noopener">📍 在 Google 地圖開啟</a>`}</dd>
       <dt>電話</dt><dd>${val(s.phone)}</dd>
       <dt>備註</dt><dd>${val(s.note)}</dd>
     </dl>
