@@ -350,7 +350,7 @@ footer svg{width:120px;margin:0 auto 6px}
 
   <div class="notes">
     <div><span class="dot" style="background:#F6D27A"></span><span>時間皆為推估，視情況彈性調整；黃底為已預訂行程。</span></div>
-    <div><span class="dot" style="background:#F2A497"></span><span>標「必去」的是正式考察行程（列入出國報告）。</span></div>
+    <div><span class="dot" style="background:#F2A497"></span><span>標「必去」的是考察行程（列入出國報告）。</span></div>
   </div>
 </section>
 
@@ -433,7 +433,7 @@ footer svg{width:120px;margin:0 auto 6px}
 
 <footer>
   <svg viewBox="0 0 120 40" aria-hidden="true"><g class="float"><path d="M10 30 q10 -10 20 0 t20 0 t20 0 t20 0 t20 0" fill="none" stroke="#3E3A39" stroke-width="3" stroke-linecap="round"/><circle cx="60" cy="14" r="8" fill="#F6D27A" stroke="#3E3A39" stroke-width="3"/></g></svg>
-  一路順風，考察順利！<br><span class="muted">行程資料版本：2026/11/11</span>
+  一路順風，考察順利！<br><span class="muted">行程資料版本：2026/11/16 v2</span>
 </footer>
 
 <script>
@@ -448,7 +448,7 @@ const TRIP = {
   flights: [
     { dir:"go",   label:"去程", no:"JX 705", date:"11/23（一）",
       from:{code:"TPE", city:"桃園", time:"14:40"}, to:{code:"PQC", city:"富國島", time:"17:40"},
-      dur:"約 4 小時", notes:["12:00 第二航廈星宇櫃台集合", "自行報到", "外館人員會到機場接機"] },
+      dur:"約 4 小時", notes:["12:00 第二航廈星宇櫃台集合", "自行報到", "抵達後自行入境"] },
     { dir:"back", label:"回程", no:"JX 706", date:"11/27（五）",
       from:{code:"PQC", city:"富國島", time:"18:40"}, to:{code:"TPE", city:"桃園", time:"23:20"},
       dur:"約 3 小時 40 分", notes:["15:50 起機場車程 30 分鐘", "已預訂桃園機場接送", "司機前一天訊息通知時間"] }
@@ -457,24 +457,24 @@ const TRIP = {
     { date:"11/23", wd:"一", title:"啟程・飛向富國島", art:"plane", items:[
       { t:"12:00", title:"集合：桃園機場第二航廈", place:"星宇櫃台", note:"自行報到" },
       { t:"14:40–17:40", title:"飛機 桃園 → 富國島", place:"星宇航空 JX705・TPE → PQC", tags:["plane"] },
-      { t:"17:40–18:30", title:"出關、提領行李", place:"富國島機場", note:"外館人員會到機場接機" },
-      { t:"18:30–20:30", title:"外交部接待晚餐", place:"地點未定", note:"原晚餐費 6 人：折抵 11/24 午餐加 2 人＋部分自費按摩", booked:true, tags:["bus"] },
+      { t:"17:40–18:30", title:"出關、提領行李", place:"富國島機場", note:"自行入境" },
+      { t:"18:30–20:30", title:"晚餐", place:"紅珊瑚中越式風味餐", tags:["bus"] },
       { t:"20:30–", title:"返回飯店休息", tags:["bus"] }
     ]},
-    { date:"11/24", wd:"二", title:"拜會市府・胡椒與珍珠", art:"pearl", items:[
-      { t:"9:20–10:00", title:"飯店集合與緩衝時間", note:"車程 15 分鐘", tags:["bus"] },
-      { t:"10:00–12:00", title:"拜會富國市人民委員會", place:"富國市人民委員會", note:"時間暫定；預計與外交部及翻譯人員在人民委員會集合", star:true, booked:true },
-      { t:"12:00–14:00", title:"午餐（90 分鐘）＋車程（30 分鐘）", place:"百富安中越式風味餐（含酒水）", note:"請外交部及翻譯人員用餐（追加 2 人餐費）", tags:["bus"] },
-      { t:"14:00–15:00", title:"考察胡椒工廠", place:"Hai Duong Pepper Farm", note:"導遊協助介紹", star:true, tags:["bus"] },
-      { t:"15:00–16:00", title:"考察珍珠養殖工廠", place:"Phu Quoc Pearl Farm", note:"導遊協助介紹", star:true, tags:["bus"] },
+    { date:"11/24", wd:"二", title:"國家公園・珍珠與胡椒", art:"pearl", items:[
+      { t:"9:10–10:00", title:"飯店集合與緩衝時間", note:"車程 50 分鐘", tags:["bus"] },
+      { t:"10:00–11:00", title:"參訪富國國家公園", note:"導遊協助介紹", star:true, tags:["walk"] },
+      { t:"11:00–14:00", title:"午餐（90 分鐘）＋車程（50 分鐘）與緩衝時間", place:"百富安中越式風味餐（含酒水）", tags:["bus"] },
+      { t:"14:00–15:00", title:"考察珍珠養殖工廠", place:"Phu Quoc Pearl Farm", note:"導遊協助介紹", star:true, tags:["bus"] },
+      { t:"15:00–16:00", title:"考察胡椒工廠", place:"Hai Duong Pepper Farm", note:"導遊協助介紹", star:true, tags:["bus"] },
       { t:"16:00–17:30", title:"日落沙灘", note:"導遊協助介紹", tags:["bus","walk"] },
-      { t:"18:00–19:30", title:"晚餐（90 分鐘）", place:"Coral 韓式 BBQ 自助式吃到飽", tags:["bus"] },
+      { t:"18:00–19:30", title:"與外交部晚餐（90 分鐘）", place:"Coral 韓式 BBQ 自助式吃到飽", note:"請外交部及翻譯人員用餐（追加 2 人餐費）", booked:true, tags:["bus"] },
       { t:"19:30–", title:"陽東夜市、返回飯店休息", tags:["walk","bus"] }
     ]},
-    { date:"11/25", wd:"三", title:"國家公園・跨海纜車", art:"cable", items:[
-      { t:"9:10–10:00", title:"飯店集合", note:"車程 50 分鐘", tags:["bus"] },
-      { t:"10:00–11:00", title:"參訪富國國家公園", note:"現場詢問官方或導遊協助介紹", star:true, tags:["walk"] },
-      { t:"11:00–12:30", title:"車程與緩衝時間", note:"車程 80 分鐘", tags:["bus"] },
+    { date:"11/25", wd:"三", title:"拜會市府・跨海纜車", art:"cable", items:[
+      { t:"8:30–9:00", title:"飯店集合、場佈時間" },
+      { t:"9:00–11:00", title:"拜會富國市人民委員會", place:"香海餐廳貴賓包廂 3 樓", note:"預計與外交部及翻譯人員集合", booked:true },
+      { t:"11:30–12:30", title:"車程與緩衝時間", note:"車程 50 分鐘", tags:["bus"] },
       { t:"12:30–14:00", title:"午餐（90 分鐘）", place:"香島自然公園自助餐" },
       { t:"14:00–17:30", title:"太陽世界香島自然公園－跨海纜車", place:"Sun World Hon Thom", note:"導遊協助介紹", star:true, tags:["cable"] },
       { t:"17:30–19:00", title:"地中海日落小鎮", note:"導遊協助介紹", tags:["bus","walk"] },
@@ -507,10 +507,8 @@ const TRIP = {
   ],
   lists: {
     todo: { title:"行程待辦", groups:[{ items:[
-      { t:"確認 11/23 外交部接待晚餐地點", s:"目前地點未定" },
-      { t:"確認 11/24 拜會人民委員會時間", s:"10:00–12:00 為暫定" },
-      { t:"追加 11/24 午餐 2 人餐費", s:"外交部及翻譯人員" },
-      { t:"確認晚餐費折抵與自費按摩安排", s:"原 11/23 晚餐費 6 人" },
+      { t:"追加 11/24 晚餐 2 人餐費", s:"外交部及翻譯人員" },
+      { t:"準備 11/25 拜會場佈", s:"8:30 集合，香海餐廳貴賓包廂 3 樓" },
       { t:"準備拜會簡報與伴手禮", s:"富國市人民委員會、珍珠集團 VinBus" },
       { t:"分配考察紀錄與拍照", s:"★ 行程要寫進出國報告" },
       { t:"留意回程接送司機訊息", s:"11/26 會傳時間" }
@@ -531,7 +529,7 @@ const TRIP = {
         { t:"護照" }, { t:"機票／電子票證" }, { t:"信用卡、現金" }, { t:"名片" }, { t:"拜會資料與伴手禮" }
       ]},
       { label:"衣物", color:"#A8D3E6", items:[
-        { t:"正式服裝", s:"11/24、11/26 拜會用" }, { t:"輕便夏季衣物" }, { t:"好走的鞋" }, { t:"薄外套", s:"冷氣、纜車上用" }, { t:"泳衣、拖鞋" }
+        { t:"正式服裝", s:"11/25、11/26 拜會用" }, { t:"輕便夏季衣物" }, { t:"好走的鞋" }, { t:"薄外套", s:"冷氣、纜車上用" }, { t:"泳衣、拖鞋" }
       ]},
       { label:"生活用品", color:"#B9DAA5", items:[
         { t:"防曬乳、帽子、太陽眼鏡" }, { t:"防蚊液" }, { t:"雨傘／輕便雨衣" }, { t:"個人藥品" }, { t:"盥洗用品" }
