@@ -350,7 +350,7 @@ footer svg{width:120px;margin:0 auto 6px}
 
   <div class="notes">
     <div><span class="dot" style="background:#F6D27A"></span><span>時間皆為推估，視情況彈性調整；黃底為已預訂行程。</span></div>
-    <div><span class="dot" style="background:#F2A497"></span><span>標「必去」的是考察行程（列入出國報告）。</span></div>
+    <div><span class="dot" style="background:#F2A497"></span><span>標 ★ 的是重要項目（考察行程，列入出國報告）。</span></div>
   </div>
 </section>
 
@@ -388,7 +388,7 @@ footer svg{width:120px;margin:0 auto 6px}
   </h2>
   <div class="days" role="tablist" aria-label="選擇日期" id="dayTabs"></div>
   <div class="legend" aria-label="交通標籤說明">
-    <span class="tag plane">✈ 飛機</span><span class="tag bus">🚌 專車</span><span class="tag cable">🚡 纜車</span><span class="tag walk">👣 步行</span><span class="tag must">★ 必去</span><span class="tag booked">已預訂</span>
+    <span class="tag plane">✈ 飛機</span><span class="tag bus">🚌 專車</span><span class="tag cable">🚡 纜車</span><span class="tag walk">👣 步行</span><span class="tag must">★ 重要項目</span><span class="tag booked">已預訂</span>
   </div>
   <div id="dayPanel" role="tabpanel" aria-live="polite"></div>
 </section>
@@ -440,7 +440,7 @@ footer svg{width:120px;margin:0 auto 6px}
 /* ============================================================
    行程資料：之後更新只要改這一段
    tags 可用：plane 飛機 / bus 專車 / cable 纜車 / walk 步行
-   star: true → 必去（正式考察）；booked: true → 已預訂
+   star: true → ★ 重要項目（考察行程）；booked: true → 已預訂
    ============================================================ */
 const TRIP = {
   departISO: "2026-11-23T14:40:00+08:00",   // JX705 起飛（台灣時間）
@@ -717,13 +717,13 @@ function renderDay(i, animate){
     <div class="day-head ${animate?'bounce-in':''}">
       <div class="art">${ART[d.art]||""}</div>
       <div><p>Day ${i+1}・${esc(d.date)}（${esc(d.wd)}）</p><h3>${esc(d.title)}</h3>
-      <p>${d.items.length} 個行程${stars?`・★ 必去 ${stars} 項`:""}</p><div id="dayWx">${wxChip(i)}</div></div>
+      <p>${d.items.length} 個行程${stars?`・★ ${stars} 項`:""}</p><div id="dayWx">${wxChip(i)}</div></div>
     </div>
     <ol class="tl">${d.items.map((x,k)=>`
       <li class="${x.star?'star':''} ${x.booked?'booked':''} ${animate?'pop':''}" style="${animate?`animation-delay:${k*60}ms`:''}">
         <div class="item">
           <div class="item-top"><span class="time">${esc(x.t)}</span>
-            ${x.star?'<span class="tag must">★ 必去</span>':''}${x.booked?'<span class="tag booked">已預訂</span>':''}</div>
+            ${x.star?'<span class="tag must" aria-label="重要項目">★</span>':''}${x.booked?'<span class="tag booked">已預訂</span>':''}</div>
           <h4>${esc(x.title)}</h4>
           ${x.place?`<div class="place">${PIN}<span>${esc(x.place)}</span></div>`:''}
           ${x.note?`<div class="note">${esc(x.note)}</div>`:''}
